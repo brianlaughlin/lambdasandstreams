@@ -4,29 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import static com.brianlaughlin.MasterArray.list;
+
 /*
     Working through Lambdas and Streams
     Source: https://www.youtube.com/watch?v=1OpAgZvYXLQ
+
+    Also a good article: http://www.baeldung.com/foreach-java
  */
 
 public class Lamdas {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        List<Integer> list = new ArrayList<>();
-        Random rand = new Random();
-
-        for(int i =0; i < 10; i++){
-            list.add(rand.nextInt(100));
-        }
-
-//        for (Integer integer : list) {
-//            System.out.println(Integer.valueOf(integer));
-//        }
-
+        MasterArray.createArray();
         list.forEach(System.out::println);
 
         System.out.println("===============Ugly way below============");
-        list.forEach(e-> {
+        list.forEach(e -> {
             System.out.println(e);
         });
 
@@ -43,7 +37,7 @@ public class Lamdas {
                 // since the parameters are the same being passed we change rewrite
                 // this to a method reference.
                 list.stream()
-                    .reduce(0,Integer::sum)
+                        .reduce(0, Integer::sum)
         );
 
     }
