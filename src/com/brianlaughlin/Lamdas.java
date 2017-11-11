@@ -16,29 +16,17 @@ import static com.brianlaughlin.MasterArray.list;
 public class Lamdas {
     public static void main(String[] args) {
 
-        MasterArray.createArray();
-        list.forEach(System.out::println);
 
-        System.out.println("===============Ugly way below============");
-        list.forEach(e -> {
-            System.out.println(e);
-        });
+        DisplayArray displayArray = new DisplayArray();
+        displayArray.show();
 
 
-        System.out.println("===============Stream filter============");
-        list.stream()
-                .filter(e -> e < 50)
-                .forEach(System.out::println);
+        SimpleStream simpleStream = new SimpleStream();
+        System.out.println("Calling: " + simpleStream.getClass().getSimpleName());
+        simpleStream.doubleEvenImperative();
 
-        System.out.println("===============Method reference============");
-        System.out.println(
-//                list.stream()
-//                    .reduce(0,(total, e) -> Integer.sum(total, e))
-                // since the parameters are the same being passed we change rewrite
-                // this to a method reference.
-                list.stream()
-                        .reduce(0, Integer::sum)
-        );
+        System.out.println("==============Functional even double ===============");
+        simpleStream.doubleEvenFuncational();
 
     }
 }
