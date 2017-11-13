@@ -27,6 +27,10 @@ public class Lamdas {
 
         System.out.println("==============Functional even double ===============");
         simpleStream.doubleEvenFuncational();
+        simpleStream.doubleOfEvenMethod();
 
+        System.out.println("==============collect ===============");
+        Sample sample = new Sample();
+        sample.groupingByMethod();
     }
 }
