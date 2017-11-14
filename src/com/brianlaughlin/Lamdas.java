@@ -32,5 +32,11 @@ public class Lamdas {
         System.out.println("==============collect ===============");
         Sample sample = new Sample();
         sample.groupingByMethod();
+
+        System.out.println("==============Infinate Stream ===============");
+        InfinateStream infinateStream = new InfinateStream();
+        infinateStream.show();
+
+
     }
 }
