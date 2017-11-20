@@ -1,5 +1,6 @@
 package com.brianlaughlin;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -53,9 +54,35 @@ public class SimpleStream {
                         .filter(e -> e % 2 == 0)
                         .map(e -> e * 2)
                         .collect(Collectors.toList());
-                        // note you could do this to a toSet and remove duplicates
+        // note you could do this to a toSet and remove duplicates
 
         System.out.println(doubleOfEven);
+    }
+
+    public void countsheep() {
+        Boolean[] arrayOfSheeps =
+                {true, true, true, false,
+                        true, true, true, true,
+                        true, false, true, false,
+                        true, false, false, true,
+                        true, true, true, true,
+                        false, false, true, true};
+
+        if (arrayOfSheeps == null) System.out.println("Null value");
+        System.out.println(
+
+                Arrays.stream(arrayOfSheeps)
+                        .filter(e -> e == true)
+                        .count()
+
+        );
+
+    }
+        public int countSheepsAnotherWay (Boolean[]arrayOfSheeps){
+            // TODO May the force be with you
+            return Arrays.stream(arrayOfSheeps).filter(x -> x != null).filter(x -> x == true).toArray().length;
+        }
+
     }
 
 }

@@ -37,6 +37,8 @@ public class Lamdas {
         InfinateStream infinateStream = new InfinateStream();
         infinateStream.show();
 
+        System.out.println("===================Count Sheep============");
+        simpleStream.countsheep();
 
     }
 }
